@@ -15,12 +15,20 @@ public class Customer {
 
 	private String lastName;
 
+	private String phoneNumber;
+
 	protected Customer() {
 	}
 
 	public Customer(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
+	}
+
+	public Customer(String firstName, String lastName, String phoneNumber) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phoneNumber = phoneNumber;
 	}
 
 	public Long getId() {
@@ -43,10 +51,18 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
 	@Override
 	public String toString() {
-		return String.format("Customer[id=%d, firstName='%s', lastName='%s']", id,
-				firstName, lastName);
+		return String.format("Customer[id=%d, firstName='%s', lastName='%s', phoneNumber='%s']", id,
+				firstName, lastName, phoneNumber);
 	}
 
 }
