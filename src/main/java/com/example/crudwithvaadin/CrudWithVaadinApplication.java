@@ -20,12 +20,13 @@ public class CrudWithVaadinApplication {
 	@Bean
 	public CommandLineRunner loadData(CustomerRepository repository) {
 		return (args) -> {
-			// save a couple of customers
-			repository.save(new Customer("Jack", "Bauer"));
-			repository.save(new Customer("Chloe", "O'Brian"));
-			repository.save(new Customer("Kim", "Bauer"));
-			repository.save(new Customer("David", "Palmer"));
-			repository.save(new Customer("Michelle", "Dessler"));
+			// save a couple of customers with phone numbers
+			repository.save(new Customer("Jack", "Bauer", "+1-555-0101"));
+			repository.save(new Customer("Chloe", "O'Brian", "+1-555-0102"));
+			repository.save(new Customer("Kim", "Bauer", "+1-555-0103"));
+			repository.save(new Customer("David", "Palmer", "+1-555-0104"));
+			repository.save(new Customer("Michelle", "Dessler", "+1-555-0105"));
+			repository.save(new Customer("Tughan", "Kurtulus", "+48-734-540-000"));
 
 			// fetch all customers
 			log.info("Customers found with findAll():");
